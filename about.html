@@ -23,8 +23,8 @@
     --border: #E5E7EB;
     --border-hover: #D1D5DB;
     --text: #111827;
-    --text-muted: #4B5563;
-    --text-dim: #9CA3AF;
+    --text-muted: #374151;
+    --text-dim: #6B7280;
     --accent: #F97316;
     --accent-dim: rgba(249,115,22,0.10);
     --accent-glow: rgba(249,115,22,0.28);
@@ -754,6 +754,112 @@
     margin-bottom: 12px;
   }
 
+  /* ─── QA ARTIFACTS STANDALONE ─── */
+  .qa-artifacts-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 48px 44px;
+    transition: background 0.3s;
+  }
+
+  .qa-artifacts-card:hover { background: var(--surface2); }
+
+  .qa-artifacts-inner {
+    display: flex;
+    gap: 60px;
+    align-items: flex-start;
+  }
+
+  .qa-artifacts-left { flex: 1; }
+
+  .qa-artifacts-right {
+    flex: 0 0 280px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding-top: 8px;
+  }
+
+  .qa-link-card {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 20px 24px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.2s;
+    position: relative;
+  }
+
+  .qa-link-card:hover {
+    border-color: rgba(249,115,22,0.3);
+    background: var(--accent-dim);
+  }
+
+  .qa-link-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text);
+  }
+
+  .qa-link-sub {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--text-muted);
+    letter-spacing: 0.05em;
+    margin-top: 4px;
+  }
+
+  .qa-link-arrow {
+    margin-left: auto;
+    font-size: 16px;
+    color: var(--text-dim);
+    transition: all 0.2s;
+  }
+
+  .qa-link-card:hover .qa-link-arrow {
+    color: var(--accent);
+    transform: translate(3px, -3px);
+  }
+
+  @media (max-width: 1024px) {
+    .qa-artifacts-inner { flex-direction: column; gap: 32px; }
+    .qa-artifacts-right { flex: 1; width: 100%; }
+  }
+
+  /* ─── PROJECT WIDE CARD ─── */
+  .project-card-wide {
+    grid-column: 1 / 3;
+  }
+
+  .project-card-wide::after { display: none; }
+
+  .project-links {
+    display: flex;
+    gap: 12px;
+    margin-top: 28px;
+  }
+
+  .project-link-btn {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    padding: 10px 20px;
+    border: 1px solid var(--border);
+    color: var(--text-muted);
+    text-decoration: none;
+    letter-spacing: 0.06em;
+    transition: all 0.2s;
+  }
+
+  .project-link-btn:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+    background: var(--accent-dim);
+  }
+
   /* ─── SKILLS ─── */
   #skills { background: var(--bg); }
 
@@ -1164,10 +1270,10 @@
       <p class="pillar-desc">I own quality end-to-end — and I make it everyone's concern. From requirement analysis with product managers, through test planning and exploratory sessions with developers, to the final go/no-go call before release. I bring process structure to fast-moving teams, surface risk early, and make sure the right people have the right information at the right time.</p>
       <div class="pillar-tags">
         <span class="tag accent">Test Planning</span>
-        <span class="tag">Exploratory Testing</span>
-        <span class="tag">API Testing</span>
-        <span class="tag">Postman</span>
-        <span class="tag">Defect Management</span>
+        <span class="tag accent">Exploratory Testing</span>
+        <span class="tag accent">API Testing</span>
+        <span class="tag accent">Postman</span>
+        <span class="tag accent">Defect Management</span>
       </div>
     </div>
     <div class="pillar">
@@ -1177,11 +1283,11 @@
       <p class="pillar-desc">Automation built from scratch, designed to last. POM architecture, CI/CD integration, data-driven tests that cover real user flows — not just happy paths. I treat automation as a force multiplier for the whole team: less time on repetitive regression, more time on the testing that actually requires judgment. The kind of suite you inherit and feel relieved, not scared.</p>
       <div class="pillar-tags">
         <span class="tag accent">Playwright</span>
-        <span class="tag">Python</span>
-        <span class="tag">Pytest</span>
-        <span class="tag">GitHub Actions</span>
-        <span class="tag">Selenium</span>
-        <span class="tag">Allure</span>
+        <span class="tag accent">Python</span>
+        <span class="tag accent">Pytest</span>
+        <span class="tag accent">GitHub Actions</span>
+        <span class="tag accent">Selenium</span>
+        <span class="tag accent">Allure</span>
       </div>
     </div>
     <div class="pillar">
@@ -1191,10 +1297,10 @@
       <p class="pillar-desc">AI isn't a shortcut — it's a shift in how fast you can move when you know how to use it well. I build real products with AI as a core part of the process: ideating, architecting, iterating, and shipping. The QA instinct stays on throughout — every output reviewed, every assumption challenged. That discipline is what separates tools people actually use from prototypes that never leave the demo environment.</p>
       <div class="pillar-tags">
         <span class="tag accent">Human in the Loop</span>
-        <span class="tag">Supabase</span>
-        <span class="tag">Vercel</span>
-        <span class="tag">OpenRouter</span>
-        <span class="tag">Gemini API</span>
+        <span class="tag accent">Supabase</span>
+        <span class="tag accent">Vercel</span>
+        <span class="tag accent">OpenRouter</span>
+        <span class="tag accent">Gemini API</span>
       </div>
     </div>
   </div>
@@ -1248,13 +1354,13 @@
       <div class="project-name">Financial<br>Agent</div>
       <p class="project-desc">A fully autonomous stock trading system connected to Interactive Brokers — not a prototype, a running engine. Supertrend signal detection, bracket order execution with built-in risk controls, real-time position tracking, and Telegram command handling so you can manage it from your phone. The kind of tool most engineers talk about building.</p>
       <div class="project-stack">
-        <span class="tag">Python</span>
-        <span class="tag">Streamlit</span>
-        <span class="tag">IBKR API</span>
-        <span class="tag">Telegram Bot</span>
-        <span class="tag">SQLite</span>
-        <span class="tag">Gemini</span>
-        <span class="tag">Groq</span>
+        <span class="tag accent">Python</span>
+        <span class="tag accent">Streamlit</span>
+        <span class="tag accent">IBKR API</span>
+        <span class="tag accent">Telegram Bot</span>
+        <span class="tag accent">SQLite</span>
+        <span class="tag accent">Gemini</span>
+        <span class="tag accent">Groq</span>
       </div>
     </a>
 
@@ -1264,13 +1370,13 @@
       <div class="project-name">Distill</div>
       <p class="project-desc">What if you could stress-test any idea against three frontier AI models — each arguing from a different analytical lens — before you commit to building it? That's Distill. Claude, Gemini, and DeepSeek debate. A Chairman delivers a verdict. Four modes, a full freemium subscription model, and security architecture built to production standard from day one.</p>
       <div class="project-stack">
-        <span class="tag">Next.js 15</span>
-        <span class="tag">Supabase</span>
-        <span class="tag">OpenRouter</span>
-        <span class="tag">Stripe</span>
-        <span class="tag">Resend</span>
-        <span class="tag">PostHog</span>
-        <span class="tag">Cloudflare</span>
+        <span class="tag accent">Next.js 15</span>
+        <span class="tag accent">Supabase</span>
+        <span class="tag accent">OpenRouter</span>
+        <span class="tag accent">Stripe</span>
+        <span class="tag accent">Resend</span>
+        <span class="tag accent">PostHog</span>
+        <span class="tag accent">Cloudflare</span>
       </div>
     </a>
 
@@ -1280,12 +1386,12 @@
       <div class="project-name">NewsHub</div>
       <p class="project-desc">Built out of frustration with having twelve browser tabs open every morning. NewsHub pulls news across AI, tech, markets, and sports — summarises every article with Gemini in real time, overlays live stock prices, financial news, and community sentiment from StockTwits. One dashboard to start the day. Built in Hebrew, for an Israeli market context.</p>
       <div class="project-stack">
-        <span class="tag">Next.js 15</span>
-        <span class="tag">Supabase</span>
-        <span class="tag">Polygon.io</span>
-        <span class="tag">Apify</span>
-        <span class="tag">Gemini Flash</span>
-        <span class="tag">Vercel</span>
+        <span class="tag accent">Next.js 15</span>
+        <span class="tag accent">Supabase</span>
+        <span class="tag accent">Polygon.io</span>
+        <span class="tag accent">Apify</span>
+        <span class="tag accent">Gemini Flash</span>
+        <span class="tag accent">Vercel</span>
       </div>
     </a>
 
@@ -1295,16 +1401,52 @@
       <div class="project-name">Automation<br>Portfolio</div>
       <p class="project-desc">A real-world automation suite — not a tutorial, not a toy project. Playwright and pytest, POM architecture, data-driven test design, xfail markers for documented known issues, Allure reporting, and a GitHub Actions pipeline that runs on every push. The kind of automation codebase you'd actually want to inherit.</p>
       <div class="project-stack">
-        <span class="tag">Playwright</span>
-        <span class="tag">Pytest</span>
-        <span class="tag">POM</span>
-        <span class="tag">Allure</span>
-        <span class="tag">GitHub Actions</span>
-        <span class="tag">Python</span>
+        <span class="tag accent">Playwright</span>
+        <span class="tag accent">Pytest</span>
+        <span class="tag accent">POM</span>
+        <span class="tag accent">Allure</span>
+        <span class="tag accent">GitHub Actions</span>
+        <span class="tag accent">Python</span>
       </div>
     </a>
 
   </div>
+
+  <div class="qa-artifacts-card reveal">
+    <div class="qa-artifacts-inner">
+      <div class="qa-artifacts-left">
+        <div class="project-type" style="margin-bottom:16px;">QA Documentation · Manual Testing</div>
+        <div class="project-highlight" style="display:inline-block;margin-bottom:20px;">STP · STD · STR · Full Artifacts</div>
+        <div style="font-family:Inter,sans-serif;font-size:32px;font-weight:800;letter-spacing:-0.02em;color:var(--text);margin-bottom:16px;line-height:1.1;">QA Artifacts</div>
+        <p class="project-desc">End-to-end testing documentation written from scratch — the kind of structured, professional artifacts that most QA engineers talk about writing but rarely do. Covers a full SauceDemo test cycle: a Test Plan (STP) defining scope, objectives, and risk; a Test Description (STD) with 26 detailed test cases across 5 suites; and a Test Results Report (STR) with pass/fail analysis and defect log. The automation suite targets the same product — manual and automated coverage fully aligned.</p>
+        <div class="project-stack" style="margin-top:24px;">
+          <span class="tag accent">Test Plan (STP)</span>
+          <span class="tag accent">Test Description (STD)</span>
+          <span class="tag accent">Test Results (STR)</span>
+          <span class="tag accent">Black-Box Testing</span>
+          <span class="tag accent">Exploratory Testing</span>
+          <span class="tag accent">Defect Management</span>
+        </div>
+      </div>
+      <div class="qa-artifacts-right">
+        <a href="https://gilkalman-portfolio.github.io/manual.html" target="_blank" class="qa-link-card">
+          <div>
+            <div class="qa-link-label">Manual Testing Docs</div>
+            <div class="qa-link-sub">STP · STD · STR · 26 test cases</div>
+          </div>
+          <div class="qa-link-arrow">↗</div>
+        </a>
+        <a href="https://gilkalman-portfolio.github.io/" target="_blank" class="qa-link-card">
+          <div>
+            <div class="qa-link-label">Automation Suite</div>
+            <div class="qa-link-sub">Playwright · Pytest · CI/CD</div>
+          </div>
+          <div class="qa-link-arrow">↗</div>
+        </a>
+      </div>
+    </div>
+  </div>
+
 </section>
 
 <!-- SKILLS -->
